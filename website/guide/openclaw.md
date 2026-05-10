@@ -7,6 +7,26 @@ MemPalace provides an official skill for [OpenClaw](https://github.com/openclaw/
 The skill is built right into the `integrations/openclaw` directory of MemPalace. 
 
 You can add MemPalace as an MCP server to OpenClaw via the CLI:
+```bash
+openclaw mcp set mempalace '{\"command\":\"uvx\",\"args\":[\"mempalace\",\"mcp\"]}'
+```
+This will properly append this to your openclaw.json with the latest schema:
+
+```bash
+ "mcp": {
+    "servers": {
+      "mempalace": {
+        "command": "uvx",
+        "args": [
+          "mempalace",
+          "mcp"
+        ]
+      }
+    }
+  }
+```
+
+### Previous method:
 
 ```bash
 openclaw mcp set mempalace '{"command":"python3","args":["-m","mempalace.mcp_server"]}'
